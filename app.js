@@ -9,6 +9,8 @@ require('dotenv').config();
 app.use(cors())
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
+const reviews  = require('./controllers/reviews');
+app.use('/controller', reviews);
 const bookNamesRoute = require('./routes/bookNames');
 app.use('/bookNames', bookNamesRoute);
 
